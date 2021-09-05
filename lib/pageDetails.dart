@@ -41,9 +41,9 @@ class _HomePageState extends State<pageDetails> {
     return Scaffold(
       floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
       backgroundColor: Colors.white,
-      body: Stack(
-          children:[ WaveWidget(Size(scaler.getWidth(100),scaler.getHeight(55)),120),SingleChildScrollView(
-        child: Column(
+      body: SingleChildScrollView(
+        child: Stack(
+          children:[ WaveWidget(Size(scaler.getWidth(100),scaler.getHeight(55)),120),Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: <Widget>[
               SizedBox(height: scaler.getHeight(2)),
@@ -141,7 +141,7 @@ class _HomePageState extends State<pageDetails> {
               SizedBox(height: scaler.getHeight(1))
             ],
           ),
-       ]),
+       ] ),
       ),
     );
   }
