@@ -20,6 +20,32 @@ class _notQuitPageState extends State<notQuitPage> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold();
+    return Scaffold(
+      body: Stack(
+          children:[ WaveWidget(Size(scaler.getWidth(100),scaler.getHeight(100)),scaler.getHeight(15)),Column(
+              children:[  SizedBox(height: scaler.getHeight(3)),Image(
+                  alignment: Alignment.topCenter,
+                  image: NetworkImage(
+                      "https://www.pageuppeople.com/wp-content/uploads/2019/01/Top-60-Employee-Engagement-image43.png")),
+                SizedBox(height: scaler.getHeight(4)),Text(
+                  "Your worker",
+                  textAlign: TextAlign.center,
+                  style: GoogleFonts.alef(
+                      fontWeight: FontWeight.normal,
+                      fontSize: scaler.getTextSize(11),
+                      color: Colors.red[900]),
+                ),Text(
+                  "will stay!",
+                  textAlign: TextAlign.center,
+                  style: GoogleFonts.alef(
+                      fontWeight: FontWeight.bold,
+                      fontSize: scaler.getTextSize(11),
+                      color: Colors.red[900]),
+                )
+              ])
+
+          ]),
+
+    );
   }
 }
