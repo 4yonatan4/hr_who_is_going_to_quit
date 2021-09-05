@@ -57,6 +57,16 @@ class _HomePageState extends State<pageDetails> {
                     fontSize: scaler.getTextSize(9),
                     color: Colors.red[900]),
               )),
+              Center(
+                  child:
+                  Text(
+                    "enter the details of your worker",
+                    textAlign: TextAlign.center,
+                    style: GoogleFonts.alef(
+                        fontWeight: FontWeight.normal,
+                        fontSize: scaler.getTextSize(6),
+                        color: Colors.red[900]),
+                  )),
               newFiled(satisfactionLevel, satisfactionLevel_str, "Satisfaction Level",false),
               newFiled(lastEvaluation, lastEvaluation_str, "Last Evaluation", false),
               newFiled(numberProject, numberProject_str, "Number of projects", false),
