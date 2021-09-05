@@ -3,6 +3,7 @@ import 'package:flutter_screen_scaler/flutter_screen_scaler.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:animated_background/animated_background.dart';
+import 'package:hr_who_is_going_to_quit/pageDetails.dart';
 import 'package:hr_who_is_going_to_quit/wave_widget.dart';
 
 import 'FadeAnimation.dart';
@@ -41,6 +42,25 @@ class _notQuitPageState extends State<notQuitPage> {
                       fontWeight: FontWeight.bold,
                       fontSize: scaler.getTextSize(11),
                       color: Colors.red[900]),
+                ), SizedBox(height: scaler.getHeight(2)),            ElevatedButton(
+                  child: Text(
+                    "Another worker",
+                    textAlign: TextAlign.center,
+                    style: GoogleFonts.abel(fontSize: scaler.getTextSize(8), color: Colors.white),
+                  ),
+                  style: ElevatedButton.styleFrom(
+                      alignment: Alignment.center,
+                      minimumSize:
+                      Size(scaler.getWidth(10), scaler.getHeight(2)),
+                      shape: new RoundedRectangleBorder(
+                        borderRadius: new BorderRadius.circular(20.0),
+                      ),
+                      primary: Colors.orange,
+                      // <-- Button color
+                      onPrimary: Colors.black),
+                  onPressed: () async {
+                    Navigator.pop(context);
+                  },
                 )
               ])
 

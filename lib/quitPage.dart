@@ -8,6 +8,8 @@ import 'package:hr_who_is_going_to_quit/wave_widget.dart';
 import 'FadeAnimation.dart';
 import 'package:flutter/material.dart';
 
+import 'pageDetails.dart';
+
 ScreenScaler scaler = new ScreenScaler();
 
 class quitPage extends StatefulWidget {
@@ -43,6 +45,26 @@ class _quitPageState extends State<quitPage> {
                     fontWeight: FontWeight.bold,
                     fontSize: scaler.getTextSize(11),
                     color: Colors.red[900]),
+              ),
+              SizedBox(height: scaler.getHeight(2)),            ElevatedButton(
+                child: Text(
+                  "Another worker",
+                  textAlign: TextAlign.center,
+                  style: GoogleFonts.abel(fontSize: scaler.getTextSize(8), color: Colors.white),
+                ),
+                style: ElevatedButton.styleFrom(
+                    alignment: Alignment.center,
+                    minimumSize:
+                    Size(scaler.getWidth(10), scaler.getHeight(2)),
+                    shape: new RoundedRectangleBorder(
+                      borderRadius: new BorderRadius.circular(20.0),
+                    ),
+                    primary: Colors.orange,
+                    // <-- Button color
+                    onPrimary: Colors.black),
+                onPressed: () async {
+                  Navigator.pop(context);
+                },
               )
           ])
 
