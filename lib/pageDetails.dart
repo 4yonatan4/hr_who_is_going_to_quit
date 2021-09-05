@@ -128,7 +128,7 @@ class _HomePageState extends State<pageDetails> {
                   if (answer){
                     Navigator.push(
                         context,
-                        MaterialPageRoute(builder: (context) => notQuitPage()));
+                        MaterialPageRoute(builder: (context) => quitPage()));
                   }
                   // if (answer){
                   //   Navigator.push(
