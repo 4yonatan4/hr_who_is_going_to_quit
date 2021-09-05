@@ -41,9 +41,9 @@ class _HomePageState extends State<pageDetails> {
     return Scaffold(
       floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
       backgroundColor: Colors.white,
-      body: SingleChildScrollView(
-        child: Stack(
-          children:[ WaveWidget(Size(scaler.getWidth(100),scaler.getHeight(55)),120),Column(
+      body: Stack(
+          children:[ WaveWidget(Size(scaler.getWidth(100),scaler.getHeight(100)),scaler.getHeight(15)),SingleChildScrollView(
+        child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: <Widget>[
               SizedBox(height: scaler.getHeight(2)),
@@ -51,7 +51,6 @@ class _HomePageState extends State<pageDetails> {
                 child:
               Text(
                 "Who is going to quit?",
-
                 textAlign: TextAlign.center,
                 style: GoogleFonts.alef(
                     fontWeight: FontWeight.normal,
@@ -141,7 +140,7 @@ class _HomePageState extends State<pageDetails> {
               SizedBox(height: scaler.getHeight(1))
             ],
           ),
-       ] ),
+       )],
       ),
     );
   }

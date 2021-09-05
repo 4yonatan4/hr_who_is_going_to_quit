@@ -22,7 +22,7 @@ class _quitPageState extends State<quitPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Stack(
-          children:[ WaveWidget(Size(scaler.getWidth(100),scaler.getHeight(55)),400)]),
+          children:[ WaveWidget(Size(scaler.getWidth(100),scaler.getHeight(100)),scaler.getHeight(15))]),
     );
   }
 }
