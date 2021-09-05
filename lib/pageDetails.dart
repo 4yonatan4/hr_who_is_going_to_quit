@@ -35,7 +35,7 @@ class _HomePageState extends State<pageDetails> {
   Widget build(BuildContext context) {
     listWidget work_accident = new listWidget(["No","Yes"], "No");
     listWidget promotion_last_5years = new listWidget(["No","Yes"], "No");
-    listWidget department = new listWidget(["sales","technical","support","IT","product_mng",], "sales");
+    listWidget department = new listWidget(["sales","technical","support","IT","product_mng","accounting","hr","management","marketing","RandD"], "sales");
     listWidget salary = new listWidget(["low","medium","high"], "medium");
 
     return Scaffold(
@@ -60,15 +60,15 @@ class _HomePageState extends State<pageDetails> {
               Center(
                   child:
                   Text(
-                    "enter the details of your worker",
+                    "enter details of your worker",
                     textAlign: TextAlign.center,
                     style: GoogleFonts.alef(
                         fontWeight: FontWeight.normal,
                         fontSize: scaler.getTextSize(6),
                         color: Colors.red[900]),
                   )),
-              newFiled(satisfactionLevel, satisfactionLevel_str, "Satisfaction Level",false),
-              newFiled(lastEvaluation, lastEvaluation_str, "Last Evaluation", false),
+              newFiled(satisfactionLevel, satisfactionLevel_str, "Satisfaction Level (0 - 100%)",false),
+              newFiled(lastEvaluation, lastEvaluation_str, "Last Evaluation (0 - 100%)", false),
               newFiled(numberProject, numberProject_str, "Number of projects", false),
               newFiled(averageMontlyHours, averageMontlyHours_str, "Average Montly Hours", false),
               SizedBox(height: scaler.getHeight(1)),
@@ -140,7 +140,7 @@ class _HomePageState extends State<pageDetails> {
                         context,
                         MaterialPageRoute(builder: (context) => quitPage()));
                   }
-                  // if (answer){
+                  // else{
                   //   Navigator.push(
                   //       context,
                   //       MaterialPageRoute(builder: (context) => notQuitPage()));
