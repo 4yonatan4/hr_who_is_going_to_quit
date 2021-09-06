@@ -135,11 +135,18 @@ class _HomePageState extends State<pageDetails> {
                     // <-- Button color
                     onPrimary: Colors.black),
                 onPressed: () async {
-                  double satisfactionLevel_d = double.parse(satisfactionLevel.text)/100;
-                  double lastEvaluation_d = double.parse(lastEvaluation.text)/100;
-                  int numberProject_d = int.parse(numberProject.text);
-                  int averageMontlyHours_d = int.parse(averageMontlyHours.text);
-                  int time_spend_company_d = int.parse(time_spend_company.text);
+                  satisfactionLevel_str = satisfactionLevel.text == "" ? "61" : satisfactionLevel.text;
+                  lastEvaluation_str = lastEvaluation.text == "" ? "71" : lastEvaluation.text;
+                  numberProject_str = numberProject.text == "" ? "4" : numberProject.text;
+                  averageMontlyHours_str = averageMontlyHours.text == "" ? "201" : averageMontlyHours.text;
+                  time_spend_company_str = time_spend_company.text == "" ? "3" : time_spend_company.text;
+
+                  double satisfactionLevel_d = double.parse(satisfactionLevel_str)/100;
+                  double lastEvaluation_d = double.parse(lastEvaluation_str)/100;
+                  int numberProject_d = int.parse(numberProject_str);
+                  int averageMontlyHours_d = int.parse(averageMontlyHours_str);
+                  int time_spend_company_d = int.parse(time_spend_company_str);
+
                   int work_accident_i = work_accident.value == "NO" ? 0 : 1 ;
                   int promotion_last_5years_i = promotion_last_5years.value == "NO" ? 0 : 1 ;
 
