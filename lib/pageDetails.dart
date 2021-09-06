@@ -1,10 +1,12 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_screen_scaler/flutter_screen_scaler.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:animated_background/animated_background.dart';
 import 'package:hr_who_is_going_to_quit/quitPage.dart';
 import 'package:hr_who_is_going_to_quit/wave_widget.dart';
+import 'dart:async';
+import 'dart:convert';
+import 'dart:io';
+import 'package:http/http.dart' as http;
 
 import 'FadeAnimation.dart';
 import 'package:flutter/material.dart';
@@ -29,6 +31,8 @@ class _HomePageState extends State<pageDetails> {
   String numberProject_str = "";
   final averageMontlyHours = TextEditingController();
   String averageMontlyHours_str = "";
+  final time_spend_company = TextEditingController();
+  String time_spend_company_str = "";
 
 
   @override
@@ -71,6 +75,7 @@ class _HomePageState extends State<pageDetails> {
               newFiled(lastEvaluation, lastEvaluation_str, "Last Evaluation (0 - 100%)", false),
               newFiled(numberProject, numberProject_str, "Number of projects", false),
               newFiled(averageMontlyHours, averageMontlyHours_str, "Average Montly Hours", false),
+              newFiled(time_spend_company, time_spend_company_str, "Time spend company", false),
               SizedBox(height: scaler.getHeight(1)),
               Align(
                   alignment: Alignment.centerLeft,
@@ -130,21 +135,40 @@ class _HomePageState extends State<pageDetails> {
                     // <-- Button color
                     onPrimary: Colors.black),
                 onPressed: () async {
-                  // print(work_accident.value);
-                  // print(promotion_last_5years.value);
-                  // print(department.value);
-                  // print(salary.value);
-                  bool answer = true;
-                  if (answer){
+                  double satisfactionLevel_d = double.parse(satisfactionLevel.text)/100;
+                  double lastEvaluation_d = double.parse(lastEvaluation.text)/100;
+                  int numberProject_d = int.parse(numberProject.text);
+                  int averageMontlyHours_d = int.parse(averageMontlyHours.text);
+                  int time_spend_company_d = int.parse(time_spend_company.text);
+                  int work_accident_i = work_accident.value == "NO" ? 0 : 1 ;
+                  int promotion_last_5years_i = promotion_last_5years.value == "NO" ? 0 : 1 ;
+
+                  var url = Uri.parse('http://yonatangat.pythonanywhere.com/');
+                  var x = {
+                    "satisfaction_level": satisfactionLevel_d,
+                    "last_evaluation": lastEvaluation_d,
+                    "number_project": numberProject_d,
+                    "average_montly_hours": averageMontlyHours_d,
+                    "time_spend_company": time_spend_company_d,
+                    "Work_accident": work_accident_i,
+                    "promotion_last_5years": promotion_last_5years_i,
+                    "department": department.value,
+                    "salary": salary.value
+                  };
+                  print(x);
+                  var response = await http.post(url, body: json.encode(x), headers: {'Content-Type': 'application/json'});
+                  print('Response status: ${response.statusCode}');
+                  print('Response body: ${response.body}');
+                  if (response.body.contains("1")){
                     Navigator.push(
                         context,
                         MaterialPageRoute(builder: (context) => quitPage()));
                   }
-                  // else{
-                  //   Navigator.push(
-                  //       context,
-                  //       MaterialPageRoute(builder: (context) => notQuitPage()));
-                  // }
+                  else{
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => notQuitPage()));
+                   }
                 },
               ),
               SizedBox(height: scaler.getHeight(1))

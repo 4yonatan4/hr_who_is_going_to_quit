@@ -24,7 +24,7 @@ class _quitPageState extends State<quitPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Stack(
-          children:[ WaveWidget(Size(scaler.getWidth(100),scaler.getHeight(100)),scaler.getHeight(18)),Column(
+          children:[ WaveWidget(Size(scaler.getWidth(100),scaler.getHeight(80)),scaler.getHeight(18)),Column(
             children:[  SizedBox(height: scaler.getHeight(3)),Image(
               alignment: Alignment.topCenter,
                 height: scaler.getHeight(12),
