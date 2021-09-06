@@ -28,7 +28,7 @@ class _quitPageState extends State<quitPage> {
             children:[  SizedBox(height: scaler.getHeight(3)),Image(
               alignment: Alignment.topCenter,
                 height: scaler.getHeight(12),
-                width: scaler.getHeight(100) ,
+                width: scaler.getWidth(100) ,
                 image: NetworkImage(
                     "https://media.istockphoto.com/vectors/angry-business-manager-shouting-at-his-business-team-vector-id1182587209?k=20&m=1182587209&s=612x612&w=0&h=SV2TJ7aLYx84oOFWQPSEAYe2SPOZoEVvoAU-dHmwLCE=")),
               SizedBox(height: scaler.getHeight(2)),Text(
