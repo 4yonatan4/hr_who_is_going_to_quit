@@ -71,10 +71,10 @@ class _HomePageState extends State<pageDetails> {
                         fontSize: scaler.getTextSize(6),
                         color: Colors.red[900]),
                   )),
-              newFiled(satisfactionLevel, satisfactionLevel_str, "Satisfaction Level (0 - 100%)",false),
-              newFiled(lastEvaluation, lastEvaluation_str, "Last Evaluation (0 - 100%)", false),
+              newFiled(satisfactionLevel, satisfactionLevel_str, "Satisfaction level (0 - 100%)",false),
+              newFiled(lastEvaluation, lastEvaluation_str, "Last evaluation (0 - 100%)", false),
               newFiled(numberProject, numberProject_str, "Number of projects", false),
-              newFiled(averageMontlyHours, averageMontlyHours_str, "Average Montly Hours", false),
+              newFiled(averageMontlyHours, averageMontlyHours_str, "Average montly hours", false),
               newFiled(time_spend_company, time_spend_company_str, "Time spend company", false),
               SizedBox(height: scaler.getHeight(1)),
               Align(
