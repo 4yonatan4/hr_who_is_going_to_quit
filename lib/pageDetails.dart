@@ -147,8 +147,8 @@ class _HomePageState extends State<pageDetails> {
                   int averageMontlyHours_d = int.parse(averageMontlyHours_str);
                   int time_spend_company_d = int.parse(time_spend_company_str);
 
-                  int work_accident_i = work_accident.value == "NO" ? 0 : 1 ;
-                  int promotion_last_5years_i = promotion_last_5years.value == "NO" ? 0 : 1 ;
+                  int work_accident_i = work_accident.value == "No" ? 0 : 1 ;
+                  int promotion_last_5years_i = promotion_last_5years.value == "No" ? 0 : 1 ;
 
                   var url = Uri.parse('http://yonatangat.pythonanywhere.com/');
                   var x = {
