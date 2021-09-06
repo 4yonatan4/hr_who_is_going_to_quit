@@ -31,7 +31,7 @@ class _notQuitPageState extends State<notQuitPage> {
                   image: NetworkImage(
                       "https://www.pageuppeople.com/wp-content/uploads/2019/01/Top-60-Employee-Engagement-image43.png")),
                 SizedBox(height: scaler.getHeight(1)),Text(
-                  "Your worker",
+                  "Your employee",
                   textAlign: TextAlign.center,
                   style: GoogleFonts.alef(
                       fontWeight: FontWeight.normal,
@@ -46,7 +46,7 @@ class _notQuitPageState extends State<notQuitPage> {
                       color: Colors.red[900]),
                 ), SizedBox(height: scaler.getHeight(2)),            ElevatedButton(
                   child: Text(
-                    "Another worker",
+                    "Another employee",
                     textAlign: TextAlign.center,
                     style: GoogleFonts.abel(fontSize: scaler.getTextSize(8), color: Colors.white),
                   ),

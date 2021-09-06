@@ -32,7 +32,7 @@ class _quitPageState extends State<quitPage> {
                 image: NetworkImage(
                     "https://media.istockphoto.com/vectors/angry-business-manager-shouting-at-his-business-team-vector-id1182587209?k=20&m=1182587209&s=612x612&w=0&h=SV2TJ7aLYx84oOFWQPSEAYe2SPOZoEVvoAU-dHmwLCE=")),
               SizedBox(height: scaler.getHeight(2)),Text(
-    "Your worker",
+    "Your employee",
     textAlign: TextAlign.center,
     style: GoogleFonts.alef(
     fontWeight: FontWeight.normal,
@@ -48,7 +48,7 @@ class _quitPageState extends State<quitPage> {
               ),
               SizedBox(height: scaler.getHeight(1)),            ElevatedButton(
                 child: Text(
-                  "Another worker",
+                  "Another employee",
                   textAlign: TextAlign.center,
                   style: GoogleFonts.abel(fontSize: scaler.getTextSize(8), color: Colors.white),
                 ),

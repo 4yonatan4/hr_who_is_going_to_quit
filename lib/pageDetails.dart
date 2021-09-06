@@ -64,7 +64,7 @@ class _HomePageState extends State<pageDetails> {
               Center(
                   child:
                   Text(
-                    "enter details of your worker",
+                    "Enter the details of your employee",
                     textAlign: TextAlign.center,
                     style: GoogleFonts.alef(
                         fontWeight: FontWeight.normal,
