@@ -13,63 +13,65 @@ import 'pageDetails.dart';
 ScreenScaler scaler = new ScreenScaler();
 
 class quitPage extends StatefulWidget {
-
   @override
   _quitPageState createState() => _quitPageState();
 }
 
 class _quitPageState extends State<quitPage> {
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Stack(
-          children:[ WaveWidget(Size(scaler.getWidth(100),scaler.getHeight(80)),scaler.getHeight(18)),Column(
-            children:[  SizedBox(height: scaler.getHeight(3)),Image(
+      body: Stack(children: [
+        WaveWidget(Size(scaler.getWidth(100), scaler.getHeight(80)),
+            scaler.getHeight(18)),
+        Column(children: [
+          SizedBox(height: scaler.getHeight(3)),
+          Image(
               alignment: Alignment.topCenter,
-                height: scaler.getHeight(12),
-                width: scaler.getWidth(100) ,
-                image: NetworkImage(
-                    "https://media.istockphoto.com/vectors/angry-business-manager-shouting-at-his-business-team-vector-id1182587209?k=20&m=1182587209&s=612x612&w=0&h=SV2TJ7aLYx84oOFWQPSEAYe2SPOZoEVvoAU-dHmwLCE=")),
-              SizedBox(height: scaler.getHeight(2)),Text(
-    "Your employee",
-    textAlign: TextAlign.center,
-    style: GoogleFonts.alef(
-    fontWeight: FontWeight.normal,
-    fontSize: scaler.getTextSize(11),
-    color: Colors.red[900]),
-    ),Text(
-                "will quit!",
-                textAlign: TextAlign.center,
-                style: GoogleFonts.alef(
-                    fontWeight: FontWeight.bold,
-                    fontSize: scaler.getTextSize(11),
-                    color: Colors.red[900]),
-              ),
-              SizedBox(height: scaler.getHeight(1)),            ElevatedButton(
-                child: Text(
-                  "Another employee",
-                  textAlign: TextAlign.center,
-                  style: GoogleFonts.abel(fontSize: scaler.getTextSize(8), color: Colors.white),
+              height: scaler.getHeight(12),
+              width: scaler.getWidth(100),
+              image: NetworkImage(
+                  "https://media.istockphoto.com/vectors/angry-business-manager-shouting-at-his-business-team-vector-id1182587209?k=20&m=1182587209&s=612x612&w=0&h=SV2TJ7aLYx84oOFWQPSEAYe2SPOZoEVvoAU-dHmwLCE=")),
+          SizedBox(height: scaler.getHeight(2)),
+          Text(
+            "Your employee",
+            textAlign: TextAlign.center,
+            style: GoogleFonts.alef(
+                fontWeight: FontWeight.normal,
+                fontSize: scaler.getTextSize(11),
+                color: Colors.red[900]),
+          ),
+          Text(
+            "will quit!",
+            textAlign: TextAlign.center,
+            style: GoogleFonts.alef(
+                fontWeight: FontWeight.bold,
+                fontSize: scaler.getTextSize(11),
+                color: Colors.red[900]),
+          ),
+          SizedBox(height: scaler.getHeight(1)),
+          ElevatedButton(
+            child: Text(
+              "Another employee",
+              textAlign: TextAlign.center,
+              style: GoogleFonts.abel(
+                  fontSize: scaler.getTextSize(8), color: Colors.white),
+            ),
+            style: ElevatedButton.styleFrom(
+                alignment: Alignment.center,
+                minimumSize: Size(scaler.getWidth(10), scaler.getHeight(2)),
+                shape: new RoundedRectangleBorder(
+                  borderRadius: new BorderRadius.circular(20.0),
                 ),
-                style: ElevatedButton.styleFrom(
-                    alignment: Alignment.center,
-                    minimumSize:
-                    Size(scaler.getWidth(10), scaler.getHeight(2)),
-                    shape: new RoundedRectangleBorder(
-                      borderRadius: new BorderRadius.circular(20.0),
-                    ),
-                    primary: Colors.orange,
-                    // <-- Button color
-                    onPrimary: Colors.black),
-                onPressed: () async {
-                  Navigator.pop(context);
-                },
-              )
-          ])
-
-          ]),
-
+                primary: Colors.orange,
+                // <-- Button color
+                onPrimary: Colors.black),
+            onPressed: () async {
+              Navigator.pop(context);
+            },
+          )
+        ])
+      ]),
     );
   }
 }
